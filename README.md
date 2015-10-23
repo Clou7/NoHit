@@ -1,2 +1,0 @@
-# NoHit
-NoHit Plugin
