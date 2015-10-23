@@ -1,0 +1,37 @@
+package me.night;
+
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+
+public class PlayerListener implements Listener {
+
+	@EventHandler(priority = EventPriority.NORMAL)
+	public void onAttack (EntityDamageByEntityEvent e){
+		if(e.getDamager() instanceof Player) {
+			if(e.getEntity() instanceof Player) {
+				Player attacker = null;
+				Player defender = null;
+				attacker = (Player) e.getDamager();
+				defender = (Player) e.getEntity();
+				String uuid = defender.getUniqueId().toString();
+				if(uuid.equals("6b32b62c-f687-40b9-ad2a-19f3f3af2970"));
+				if(uuid.equals("a6db72b1-b2c8-4ee0-a197-cfdb44f47160"));
+				if(uuid.equals("99f95613-8d38-4ff8-a8eb-f96d2c7fac61"));
+				if(uuid.equals("f95fea93-11b1-4ecf-ae03-92d5fba9dfbf"));
+				if(uuid.equals("98c18a9e-a092-459c-8fb5-2e91fb912bfe"));
+				if(uuid.equals("57cf3e92-9b43-460f-b61d-9e4608360f9c"));
+				if(uuid.equals("c683b7b9-460f-444c-b1bb-eef95b2ce34e"));
+				if(uuid.equals("6b1173f9-109b-4a67-8c70-a015317f538f"));
+				if(uuid.equals("dd215a21-1d9e-42c7-8b55-6fbb01b46ff0"));
+				if(uuid.equals("0288edac-1b66-4b8a-bcb4-834c427d3d47")) {
+					attacker.kickPlayer(ChatColor.RED + "Please Do Not Hit " + ChatColor.GOLD + defender.getName() + ChatColor.RED + "!");
+					defender.sendMessage(ChatColor.BOLD + "[" + ChatColor.GOLD + "NoHit" + ChatColor.RESET + ChatColor.BOLD + "] " + ChatColor.RED + ChatColor.BOLD + "You were hit by " + ChatColor.GOLD + ChatColor.BOLD + attacker.getName() + ChatColor.RED + ChatColor.BOLD + "!");
+				}
+			}
+		}
+	}
+}
