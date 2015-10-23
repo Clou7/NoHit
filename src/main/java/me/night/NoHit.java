@@ -8,6 +8,7 @@ public class NoHit extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		Bukkit.getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new PlayerPermListener(), this);
 	}
 	
 	@Override
